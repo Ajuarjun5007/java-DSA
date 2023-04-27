@@ -94,9 +94,9 @@ public class mergesort {
 
         int p1=left;
         int p2=mid+1;
-        // 8 6 4 13 18 17  //
-        int[] ansarr= new int[left+right+1];
         int iter=0;
+        int[] ansarr= new int[left+right+1];
+
 
         while(p1<=mid && p2<=right){
 
