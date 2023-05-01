@@ -1,6 +1,6 @@
 package leetcode;
 import java.util.Arrays;
-public class Averagesalaryexcludingminandmax {
+public class Averagesalaryexcludingminandmax1491 {
     public static void main(String[] args) {
         int[] salary={1000,2000,3000,4000,5000};
     }
