@@ -3,6 +3,8 @@ import java.util.Arrays;
 public class Averagesalaryexcludingminandmax1491 {
     public static void main(String[] args) {
         int[] salary={1000,2000,3000,4000,5000};
+        double ans=avg(salary);
+        System.out.print(ans+" ");
     }
 
     public static double avg(int[] salary) {
