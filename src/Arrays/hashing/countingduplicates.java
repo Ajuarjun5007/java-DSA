@@ -15,13 +15,14 @@ public class countingduplicates {
 
         for (int i = 0; i < n; i++) {
             int key = a[i];
-            if (hmap.containsKey(key)) { //
-                int count = hmap.get(key);//
-                count++;//3
-                hmap.put(key,count); // 0,2;
-            } else {
-                hmap.put(key, 1);//0,1;
-            }
+//            if (hmap.containsKey(key)) { //
+//                int count = hmap.get(key);//
+//                count++;//3
+//                hmap.put(key,count); // 0,2;
+//            } else {
+//                hmap.put(key, 1);//0,1;
+//            }
+            hmap.put(key, hmap.getOrDefault(key,0)+1);
         }
 
         for (HashMap.Entry<Integer, Integer> entry : hmap.entrySet()) {
