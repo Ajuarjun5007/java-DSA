@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class mergesort {
     //    public static void main(String[] args) {
 //        int [] arr = {5,1,2,7,3};
@@ -66,68 +68,55 @@ public class mergesort {
 //        }
 //    }
     public static void main(String[] args){
-        int[] a = {5,1,2,7,3};
-        int n = a.length;
+        int[] array = {5,1,2,7,3};
+        int n = array.length;
         int left=0;
         int right=n-1;
 
-        mergesort(a,left,right);
-        for(int i=0; i<n; i++){
-            System.out.print(a[i]+" ");
+       int[] ans= mergesort(array);
+        for(int i=0; i<ans.length; i++){
+            System.out.print(ans[i]+" ");
         }
 
     }
-    public static void mergesort(int[] arr,int left,int right){
+    public static int[] mergesort(int[] arr){
 
-
-
-        while(left>=right){  // 8 6 4 13 18 17
-            return;
+        if(arr.length==1){
+            return arr;
         }
-        int mid= left+(right-left)/2;
-        mergesort(arr,left,mid);          //8 6 4 // 8 6 // 4 // 8 // 6// 4
-        mergesort(arr,mid+1,right);
-        mergearr(arr,left,mid,right);
+        int mid=arr.length/2;
+        int[] left=mergesort(Arrays.copyOfRange(arr,0,mid));
+        int[] right=mergesort(Arrays.copyOfRange(arr,mid,arr.length));
+        return mergearr(left,right);
+
+
 
     }
-    public static void mergearr(int[] arr, int left, int mid, int right){
+    public static int[] mergearr( int[] left,int[] right){
 
-        int p1=left;
-        int p2=mid+1;
-        int iter=0;
-        int[] ansarr= new int[left+right+1];
-
-
-        while(p1<=mid && p2<=right){
-
-            if(arr[p1]<arr[p2]){
-                ansarr[iter]=arr[p1];
-                iter++;
-                p1++;
-            }else{
-                ansarr[iter]=arr[p2];
-                iter++;
-                p2++;
-
-            }
-        }
-
-        while(p1<=mid){
-            ansarr[iter]=arr[p1];
-            iter++;
-            p1++;
-        }
-
-        while(p2<=right){
-            ansarr[iter]=arr[p2];
-            iter++;
-            p2++;
-        }
-
-        for(int i=left; i<=right; i++){
-            arr[i]=ansarr[i-left];
-        }
-
-
+      int i=0,j=0,k=0;
+      int[] ansarr=new int[left.length+right.length];
+       while(i<left.length && j<right.length){
+           if(left[i]<right[j]){
+               ansarr[k]=left[i];
+               k++;
+               i++;
+           }else{
+               ansarr[k]=right[j];
+               k++;
+               j++;
+           }
+       }
+       while(i< left.length){
+           ansarr[k]=left[i];
+           k++;
+           i++;
+       }
+       while(j< right.length){
+           ansarr[k]=right[j];
+           k++;
+           j++;
+       }
+        return ansarr;
     }
 }
