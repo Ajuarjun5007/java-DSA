@@ -1,12 +1,14 @@
-package Arrays;
+package leetcode;
 
-public class canPlaceflower605 {
+public class canplaceflower605 {
     public static void main(String[] args) {
         int[] arr={1,0,1,0,1,0,0,0};
         int n=1;
         boolean ans =canPlaceFlowers(arr,n);
         System.out.println(ans);
     }
+
+
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
         int len=flowerbed.length;
         int count=0;
