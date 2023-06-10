@@ -267,11 +267,11 @@ public class linkedlist {
 
         while(current!=null){
             next=current.next;   //2
-            current.next=previous;//0
-            previous=current;     //
-            current=next;
+            current.next=previous;//null
+            previous=current;     //1
+            current=next;       //2
         }
-        head=previous;
+        head=previous;          //1
 
         return head;
     //                    ----------XXXXX-----------
