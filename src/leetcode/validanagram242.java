@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class validanagram242 {
     public static void main(String[] args) {
-        String s="anagqram";
+        String s="anagram";
         String t="nagaram";
         System.out.print(isvalid(s,t));
     }

@@ -57,37 +57,37 @@ public class medianof2sortedarrays {
 
         n = arr1.length;
         m = arr2.length;
-        int c[] = new int[m + n];
+        int arr[] = new int[m + n];
         int i = 0, j = 0, k = 0;
 
         while (i < n && j < m) {
             if (arr1[i] < arr2[j]) {
-                c[k] = arr1[i];
+                arr[k] = arr1[i];
                 i++;
             } else {
-                c[k] = arr2[j];
+                arr[k] = arr2[j];
                 j++;
             }
             k++;
         }
         while (i < n) {
-            c[k] = arr1[i];
+            arr[k] = arr1[i];
             i++;
             k++;
         }
         while (j < m) {
-            c[k] = arr2[j];
+            arr[k] = arr2[j];
             j++;
             k++;
         }
 
         if ((n + m) % 2 != 0)//
         {
-            return c[(m + n) / 2];
+            return arr[(m + n) / 2];
         } else {
             int x = (m + n) / 2;//4
-            double p = c[x];//c[2]
-            double q = c[x - 1];//c[1]
+            double p = arr[x];//c[2]
+            double q = arr[x - 1];//c[1]
             return (p + q) / 2;
         }
     }

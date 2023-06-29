@@ -1,35 +1,49 @@
+
 package Arrays;
 import java.util.*;
+
 public class test {
+    public static void main(String[] args) {
+       int[] nums=  {-1, 0, 1, 2, -1, -4};
 
-
-        public static void main (String[] args) {
-            // Your code here
-
-            int[] arr={12,11,6};
-            int max=0, min=0;
-
-
-                if(arr[0]>arr[1] && arr[0]>arr[2]){
-                    max=1;
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length; i++)
+        {
+            if(i == 0 || (nums[i] != nums[i-1]))
+            {
+                int j = i + 1;
+                int k = nums.length -1;
+                while(j < k)
+                {
+                    if((nums[i] + nums[j] + nums[k]) == 0)
+                    {
+                        List<Integer> res = new ArrayList<>();
+                        res.add(nums[i]);
+                        res.add(nums[j]);
+                        res.add(nums[k]);
+                        while(j < k && nums[j] == nums[j + 1]) j++;
+                        while(j < k && nums[k] == nums[k - 1]) k--;
+                        j++;
+                        k--;
+                        ans.add(res);
+                    }
+                    else if(nums[i] + nums[j] + nums[k] < 0)
+                    {
+                        j++;
+                    }
+                    else
+                    {
+                        k--;
+                    }
                 }
-                if(arr[0]<arr[1] && arr[0]<arr[2]){
-                    min=1;
-                }
-                if(arr[1]>arr[0] && arr[1]>arr[2]){
-                    max=2;
-                } if(arr[1]<arr[0] && arr[1]<arr[2]){
-                    min=2;
-                }
-                if(arr[2]>arr[0] && arr[2]>arr[1]){
-                    max=3;
-                } if(arr[2]<arr[0] && arr[2]<arr[1]){
-                    min=3;
-                }
-
-            System.out.print(min+" "+max);
+            }
         }
 
-
+        System.out.print(ans);
     }
 
+
+
+
+}

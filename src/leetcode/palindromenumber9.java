@@ -2,7 +2,7 @@ package leetcode;
 
 public class palindromenumber9 {
     public static void main(String[] args) {
-        int num=1021;
+        int num=10101;
     boolean ans=palindromenumber(num);
         System.out.println(ans);
     }

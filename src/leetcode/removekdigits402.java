@@ -2,9 +2,11 @@ package leetcode;
 import java.util.*;
 
 public class removekdigits402 {
+//    Given string num representing a non-negative integer num,
+//    and an integer k, return the smallest possible integer after removing k digits from num.
     public static void main(String[] args) {
-        String str="10212";
-        int k=3;
+        String str="10200";
+        int k=1;
 
         String ans=  removekdigits(str,k);
         System.out.print(ans);

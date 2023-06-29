@@ -10,22 +10,47 @@ public class numberslessthancurrentnumber1365 {
     }
 
     public static int[] findmin(int[] nums) {
-        int ans[] = new int[nums.length];
-        for(int i=0; i<nums.length; i++){
-            int num=nums[i];
-            int count=0;
 
-            for(int j=0; j<nums.length; j++){
-                int num1=nums[j];
-                if(i!=j){
-                    if(num1<num){
-                        count++;
-                    }
+        int[] ans = new int[nums.length];
+        for(int i=0; i<nums.length; i++){
+            int count=0;
+            int num=nums[i];
+            for(int j=i+1; j<nums.length; j++){
+
+                if(num>nums[j]){
+                    count++;
                 }
             }
             ans[i]=count;
         }
-        return ans;
+            return ans;
+
+
+
+
+
+
+
+
+
+
+
+//        int ans[] = new int[nums.length];
+//        for(int i=0; i<nums.length; i++){
+//            int num=nums[i];
+//            int count=0;
+//
+//            for(int j=0; j<nums.length; j++){
+//                int num1=nums[j];
+//                if(i!=j){
+//                    if(num1<num){
+//                        count++;
+//                    }
+//                }
+//            }
+//            ans[i]=count;
+//        }
+//        return ans;
     }
     }
 
