@@ -4,46 +4,125 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-       int[] nums=  {-1, 0, 1, 2, -1, -4};
+        HashMap <Character, Integer> hmap = new HashMap<>();
+        hmap.put ('B', 2);
+        hmap.put ('A', 4);
+        hmap.put ('D',1);
+        hmap.put ('F', 9);
+        hmap.put ('C', 3);
 
-        List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(nums);
-        for(int i = 0; i < nums.length; i++)
-        {
-            if(i == 0 || (nums[i] != nums[i-1]))
-            {
-                int j = i + 1;
-                int k = nums.length -1;
-                while(j < k)
-                {
-                    if((nums[i] + nums[j] + nums[k]) == 0)
-                    {
-                        List<Integer> res = new ArrayList<>();
-                        res.add(nums[i]);
-                        res.add(nums[j]);
-                        res.add(nums[k]);
-                        while(j < k && nums[j] == nums[j + 1]) j++;
-                        while(j < k && nums[k] == nums[k - 1]) k--;
-                        j++;
-                        k--;
-                        ans.add(res);
-                    }
-                    else if(nums[i] + nums[j] + nums[k] < 0)
-                    {
-                        j++;
-                    }
-                    else
-                    {
-                        k--;
-                    }
-                }
-            }
+// ------------Sort by Value---------------
+
+        for (HashMap.Entry <Character, Integer> entry : hmap.entrySet()) {
+            System.out.println(entry.getKey()+" "+entry.getValue());
         }
 
-        System.out.print(ans);
+        ArrayList <HashMap.Entry <Character, Integer>> list = new ArrayList<>();
+        for (HashMap.Entry <Character, Integer> entry: hmap.entrySet()) {
+            list.add(entry);
+        }
+
+        Comparator <HashMap.Entry <Character, Integer>> comp = new Comparator <HashMap.Entry <Character, Integer>>() {
+            public int compare(HashMap.Entry <Character, Integer> o1, HashMap.Entry <Character, Integer> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        };
+
+        Collections.sort(list, comp);
+        HashMap <Character, Integer> sortMap = new LinkedHashMap<>();
+
+        for (HashMap.Entry <Character, Integer> entry : list) {
+            sortMap.put(entry.getKey(), entry.getValue());
+        }
+
+        System.out.println("sorted ans");
+        for (HashMap.Entry <Character, Integer> entry : sortMap.entrySet()) {
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+
+// ------------Sort by Key---------------
+        // for (HashMap.Entry <Character, Integer> entry : hmap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+
+        // ArrayList <HashMap.Entry <Character, Integer>> list = new ArrayList<>();
+        // for (HashMap.Entry <Character, Integer> entry: hmap.entrySet()) {
+        //     list.add(entry);
+        // }
+
+        // Comparator <HashMap.Entry <Character, Integer>> comp = new Comparator <HashMap.Entry <Character, Integer>>() {
+        //     public int compare(HashMap.Entry <Character, Integer> o1, HashMap.Entry <Character, Integer> o2) {
+        //         return o1.getKey().compareTo(o2.getKey());
+        //     }
+        // };
+
+        // Collections.sort(list, comp);
+        // HashMap <Character, Integer> sortMap = new LinkedHashMap<>();
+
+        // for (HashMap.Entry <Character, Integer> entry : list) {
+        //     sortMap.put(entry.getKey(), entry.getValue());
+        // }
+
+        // System.out.println("sorted ans");
+        // for (HashMap.Entry <Character, Integer> entry : sortMap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+
+//---------------------Reverse by inbuild function-------------
+        // for (HashMap.Entry <Character, Integer> entry : hmap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+
+        // ArrayList <HashMap.Entry <Character, Integer>> list = new ArrayList<>();
+        // for (HashMap.Entry <Character, Integer> entry: hmap.entrySet()) {
+        //     list.add(entry);
+        // }
+
+        // Comparator <HashMap.Entry <Character, Integer>> comp = new Comparator <HashMap.Entry <Character, Integer>>() {
+        //     public int compare(HashMap.Entry <Character, Integer> o1, HashMap.Entry <Character, Integer> o2) {
+        //         return o1.getKey().compareTo(o2.getKey());
+        //     }
+        // };
+
+        // Collections.sort(list, comp.reversed());
+        // HashMap <Character, Integer> sortMap = new LinkedHashMap<>();
+
+        // for (HashMap.Entry <Character, Integer> entry : list) {
+        //     sortMap.put(entry.getKey(), entry.getValue());
+        // }
+
+        // System.out.println("sorted ans");
+        // for (HashMap.Entry <Character, Integer> entry : sortMap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+
+//-----------reverse by equation o1, o2 interchange----------
+        // for (HashMap.Entry <Character, Integer> entry : hmap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+
+        // ArrayList <HashMap.Entry <Character, Integer>> list = new ArrayList<>();
+        // for (HashMap.Entry <Character, Integer> entry: hmap.entrySet()) {
+        //     list.add(entry);
+        // }
+
+        // Comparator <HashMap.Entry <Character, Integer>> comp = new Comparator <HashMap.Entry <Character, Integer>>() {
+        //     public int compare(HashMap.Entry <Character, Integer> o1, HashMap.Entry <Character, Integer> o2) {
+        //         return o2.getKey().compareTo(o1.getKey());
+        //     }
+        // };
+
+        // Collections.sort(list, comp);
+        // HashMap <Character, Integer> sortMap = new LinkedHashMap<>();
+
+        // for (HashMap.Entry <Character, Integer> entry : list) {
+        //     sortMap.put(entry.getKey(), entry.getValue());
+        // }
+
+        // System.out.println("sorted ans");
+        // for (HashMap.Entry <Character, Integer> entry : sortMap.entrySet()) {
+        //     System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
     }
-
-
-
 
 }
