@@ -21,5 +21,37 @@ public class longestsubarrayof1safterdeleting1493 {
             return nums.length-1;
         }
         return maxcount;
+
+//  --------------------------------XXXXXXXXXXXXXX-----------------------
+//        ArrayList <Integer> aList = new ArrayList<>();
+//
+//        int sum = 0, max =0;
+//        if(nums[0]==0){
+//            aList.add(0);
+//        }else{
+//            sum = 1;
+//        }
+//
+//        for(int i=1; i<nums.length; i++){
+//            if(nums[i]==0){
+//                aList.add(sum);
+//                sum = 0;
+//                aList.add(0);
+//            }else{
+//                sum+=nums[i];
+//            }
+//        }
+//        aList.add(sum);
+//
+//        for(int i=1; i<aList.size()-1; i++){
+//            if(aList.get(i)==0){
+//                max = Math.max(max, aList.get(i-1) + aList.get(i+1));
+//            }
+//        }
+//
+//        if(aList.size()==1){
+//            max = aList.get(0)-1;
+//        }
+//        return max;
     }
 }

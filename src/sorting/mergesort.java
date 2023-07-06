@@ -23,7 +23,7 @@ public class mergesort {
         return mergearr(left,right);
     }
     public static int[] mergearr( int[] left,int[] right){
-//5,1,2,7,3
+
         int[] joined = new int[left.length+ right.length];
         int i=0,j=0,k=0;
         while(i< left.length && j<right.length){
