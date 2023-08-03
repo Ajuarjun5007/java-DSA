@@ -12,9 +12,11 @@ public class linkedlist {
     private class Node {     //   10-->11 12 13 14 15
         int val;
         Node next;
-        Node(){
+
+        Node() {
 
         }
+
         Node(int value) {
             this.val = value;
             this.next = null;
@@ -27,13 +29,14 @@ public class linkedlist {
 
         return this.size;
     }
-    // to print linked list
-    public  void display(){
-        Node temp=this.head;
 
-        while(temp!=null){
-            System.out.print(temp.val+"->");
-            temp=temp.next;
+    // to print linked list
+    public void display() {
+        Node temp = this.head;
+
+        while (temp != null) {
+            System.out.print(temp.val + "->");
+            temp = temp.next;
         }
         System.out.print("null");
     }
@@ -51,6 +54,7 @@ public class linkedlist {
         }
 
     }
+
     //              ------------------XXXXXX---------
     // to get value of last node
     public int getLast() throws Exception {
@@ -62,6 +66,7 @@ public class linkedlist {
         return lastNode.val;
 
     }
+
     //              ------------------XXXXXX---------
     // to get vlue of index
     public int getAt(int index) throws Exception {
@@ -82,6 +87,7 @@ public class linkedlist {
         return temp.val;
 
     }
+
     //              ------------------XXXXXX---------
     // to get the node
     public Node getNodeat(int index) throws Exception {
@@ -100,6 +106,7 @@ public class linkedlist {
         return temp;
 
     }
+
     //              ------------------XXXXXX---------
     // to add first we must move pointer first..
     public void addFirst(int data) {       //    1--> 2 3 4 5
@@ -114,6 +121,7 @@ public class linkedlist {
             this.size += 1;
         }
     }
+
     //              ------------------XXXXXX---------
     // to add last we must move pointer first..
     public void addlast(int data) {
@@ -133,6 +141,7 @@ public class linkedlist {
 
 
     }
+
     //              ------------------XXXXXX---------
     //to add in between the nodes
     public void addAt(int index, int data) throws Exception {
@@ -158,38 +167,40 @@ public class linkedlist {
 
 
     }
-    //              ------------------XXXXXX---------
-    public int removedFirst()throws Exception{
 
-        if(this.size==0) {
+    //              ------------------XXXXXX---------
+    public int removedFirst() throws Exception {
+
+        if (this.size == 0) {
             throw new Exception("List is empty");
         }
-        int removedVal=this.head.val;
-        if(this.size==0){
-            this.head=this.tail=null;
+        int removedVal = this.head.val;
+        if (this.size == 0) {
+            this.head = this.tail = null;
         }
-        this.head=this.head.next;
-        this.size=-1;
+        this.head = this.head.next;
+        this.size = -1;
         return removedVal;
     }
+
     //              ------------------XXXXXX---------
     // to remove last..
-    public int removedLast() throws Exception{
+    public int removedLast() throws Exception {
 
-        if(this.size==0){
+        if (this.size == 0) {
             throw new Exception("List is empty");
 
         }
-        int removedvalue=this.head.val;
-        if(this.size==0){
-            this.head=this.tail=null;
-        }else {
+        int removedvalue = this.head.val;
+        if (this.size == 0) {
+            this.head = this.tail = null;
+        } else {
 
             Node nodeBeforetail = this.getNodeat(this.size - 2);
             nodeBeforetail.next = null;
             this.tail = nodeBeforetail;
         }
-        this.size-=1;
+        this.size -= 1;
         return removedvalue;
     }
     //              ------------------XXXXXX---------
@@ -198,13 +209,13 @@ public class linkedlist {
 
     public Node deleteMiddleOfLinkedlist(Node head) {
 
-        if(head==null){
+        if (head == null) {
             return null;
         }
-        if(head.next==null){
+        if (head.next == null) {
             return null;
         }
-        if(head!=null && head.next!=null) {
+        if (head != null && head.next != null) {
             Node temp = head;
             int size = 0;
 
@@ -229,8 +240,9 @@ public class linkedlist {
         }
         return head;
     }
+
     //              ------------------XXXXXX---------
-    public  Node Merge (Node head1, Node head2) {
+    public Node Merge(Node head1, Node head2) {
 //Enter your code here
         // 1 2 3
         // 5 6 7
@@ -256,26 +268,28 @@ public class linkedlist {
             }
             tail = tail.next;
         }
-         return dummyNode.next;
+        return dummyNode.next;
     }
-    //              ------------------XXXXXX---------
-    public  Node ReverseLinkedList(Node head) {
-        // return the head of the modified linked list
-        Node previous=null;
-        Node current=head;
-        Node next=null;          // 0 1 2 3 4 5-->  1 2 3 4 5-->
 
-        while(current!=null){
-            next=current.next;   //2
-            current.next=previous;//null
-            previous=current;     //1
-            current=next;       //2
+    //              ------------------XXXXXX---------
+    public Node ReverseLinkedList(Node head) {
+        // return the head of the modified linked list
+        Node previous = null;
+        Node current = head;
+        Node next = null;          // 0 1 2 3 4 5-->  1 2 3 4 5-->
+
+        while (current != null) {
+            next = current.next;   //2
+            current.next = previous;//null
+            previous = current;     //1
+            current = next;       //2
         }
-        head=previous;          //1
+        head = previous;          //1
 
         return head;
-    //                    ----------XXXXX-----------
+        //                    ----------XXXXX-----------
     }
+
     public Node merge(Node list1, Node list2) {
         Node temp = new Node(0);
         Node current = temp;
@@ -291,37 +305,87 @@ public class linkedlist {
             temp = temp.next;
         }
 
-        if (list1 ==  null) {
+        if (list1 == null) {
             temp.next = list2;
         } else if (list2 == null) {
             temp.next = list1;
         }
         return current.next;
     }
- //   -------------------xxxxxxxxxxxx-------------
-    public Node MergeWithoutSort(Node head1,Node head2){
+
+    //   -------------------xxxxxxxxxxxx-------------
+    public Node MergeWithoutSort(Node head1, Node head2) {
         // 1 ,2 3,4
         // 5,6,7,8
         // 1,5,2,6,3,7,4,8
 
-            Node newNode = new Node (0);
-            Node temp = newNode;
+        Node newNode = new Node(0);
+        Node temp = newNode;
 
-            while (head1 != null && head2 != null)  {
-                newNode.next = head1; // 1
-                head1 = head1.next; // 2
-                newNode = newNode.next;
-                newNode.next = head2;
-                head2 = head2.next;
-                newNode = newNode.next;
-            }
-            if (head1 == null) {
-                newNode.next = head2;
-            }
-            if (head2 == null) {
-                newNode.next = head1;
-            }
-
-            return temp.next;
+        while (head1 != null && head2 != null) {
+            newNode.next = head1; // 1
+            head1 = head1.next; // 2
+            newNode = newNode.next;
+            newNode.next = head2;
+            head2 = head2.next;
+            newNode = newNode.next;
         }
+        if (head1 == null) {
+            newNode.next = head2;
+        }
+        if (head2 == null) {
+            newNode.next = head1;
+        }
+
+        return temp.next;
+    }
+
+//------------------Rorederlinkedlist-------
+
+//    public void reorderLinkedList(Node head) {
+//        if(head==null || head.next==null){
+//            return ;
+//        }
+//        Node mid = mid(head);
+//        Node reversed= reverse(mid);
+//        merge(head,reversed);
+//
+//    }
+//    private Node mid(Node head){
+//        Node prev = null;
+//        Node slow = head;
+//        Node fast = head;
+//
+//        while (fast != null && fast.next != null) {
+//            prev = slow;
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//        prev.next = null;
+//
+//        return slow;
+//    }
+//    private Node reverse(Node head){
+//
+//        Node curnt =head;
+//        Node prev=null;
+//        Node next=null;
+//        while(curnt!=null){
+//            next=curnt.next;
+//            curnt.next=prev;
+//            prev=curnt;
+//            curnt=next;
+//        }
+//        head=prev;
+//
+//        return head;
+//    }
+//    private void merge(Node l1,Node l2){
+//        while(l2!=null){
+//            Node next=l1.next;
+//            l1.next=l2;
+//            l1=l2;
+//            l2=next;
+//        }
+//    }
 }
