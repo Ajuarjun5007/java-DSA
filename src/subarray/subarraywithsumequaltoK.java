@@ -4,8 +4,8 @@ import java.util.*;
 // total number of subarray equal to k
 public class subarraywithsumequaltoK {
     public static void main(String[] args) {
-        int[] arr = {5,2,4,6,1,3,3};
-        int k=6;
+        int[] arr = {3,1,5,2,2};
+        int k=4;
         int ans = subarraycount(arr,k);
         System.out.println(ans);
     }

@@ -25,11 +25,18 @@ public class client {
             llist1.addlast(3);
             llist1.addlast(4);
             llist1.addlast(5);
+
+            linkedlist llist2 = new linkedlist();
+            llist2.addlast(6);
+            llist2.addlast(7);
+            llist2.addlast(9);
+            llist2.addlast(10);
+            llist2.addlast(11);
 //           llist1.display();
             System.out.println();
 
-//            llist1.head= new linkedlist().Merge(llist1.head, llist2.head);
-//            llist1.display();
+            llist1.head= new linkedlist().Merge(llist1.head, llist2.head);
+            llist1.display();
 
 //            llist1.head= new linkedlist().mid(llist1.head);
 //            llist1.display();

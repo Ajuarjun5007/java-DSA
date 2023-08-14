@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class mergesort {
     public static void main(String[] args){
-        int[] array = {511,1331,2,217,311};
+        int[] arr = {511,1331,2,217,311};
 
-       int[] ans= mergesort(array);
+       int[] ans= mergesort(arr);
         for(int i=0; i<ans.length; i++){
             System.out.print(ans[i]+" ");
         }
