@@ -19,12 +19,13 @@ class Main{
         char arr1[] = new char[str1.length()];
         char arr2[] = new char[str2.length()];
 
-        for(int i=0; i<arr1.length; i++){
-            arr1[i]=str1.charAt(i);
-        }
-        for(int i=0; i<arr2.length; i++){
-            arr2[i]=str2.charAt(i);
-        }
+        char[] array1= str1.toCharArray();
+//        for(int i=0; i<arr1.length; i++){
+//            arr1[i]=str1.charAt(i);
+//        }
+//        for(int i=0; i<arr2.length; i++){
+//            arr2[i]=str2.charAt(i);
+//        }
 
         Arrays.sort(arr1);
         Arrays.sort(arr2);

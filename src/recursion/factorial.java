@@ -14,9 +14,9 @@ public class factorial {
             if( n==1) {
                 return 1;
             }
-            int fac=factorial(n-1);
-            ans=fac*n;
-            return ans;
+//            int fac=factorial(n-1);
+//            ans=fac*n;
+            return n*n-1;
         }
     }
 

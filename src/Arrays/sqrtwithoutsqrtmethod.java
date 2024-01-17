@@ -4,7 +4,7 @@ public class sqrtwithoutsqrtmethod {
     public static void main(String[] args)
     {
        // double n = 23;
-        int n=16;
+        int n=136;
         //findSqrt(n);
         double ans = sqrt(n);
         System.out.println(ans);
@@ -62,15 +62,36 @@ public class sqrtwithoutsqrtmethod {
              // -------XXXXXX------
 
     public static double sqrt(int num){
-        double t=0;
-        double sqrt=num/2;//9/2
-        while(t-sqrt!=0){ // -4.5;
-            t=sqrt;  // 4.5
-            sqrt=(t+(num/t))/2; // 4.5+2
-        }
-       // int ans =(int)sqrt;
 
+        double t=0;
+        double sqrt=num/2;
+        while(t-sqrt!=0){
+            t=sqrt;
+            sqrt=(t+(num/t))/2;
+        }
         return sqrt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        double t=0;
+//        double sqrt=num/2;
+//        while(t-sqrt!=0){
+//            t=sqrt;
+//            sqrt=(t+(num/t))/2;
+//        }
+//
+//        return sqrt;
     }
 
 }

@@ -22,7 +22,6 @@ class pLinkedList{
                 System.out.print(temp.val+"->");
                 temp=temp.next;
             }
-            System.out.println("");
     }
     public void addFirst(int val){
         Node newNode = new Node(val);
@@ -94,14 +93,14 @@ class pLinkedList{
         linkedlist1.addFirst(3);
         linkedlist1.addFirst(2);
         linkedlist1.addFirst(1);
-        linkedlist1.display();
+//        linkedlist1.display();
 
-//        linkedlist2.addFirst(5);
-//        linkedlist2.addFirst(3);
-//        linkedlist2.addFirst(1);
+        linkedlist2.addFirst(5);
+        linkedlist2.addFirst(3);
+        linkedlist2.addFirst(1);
 //        linkedlist2.display();
 
-        linkedlist1.head = new pLinkedList().reverse(linkedlist1.head);
+        linkedlist1.head = new pLinkedList().merge(linkedlist1.head, linkedlist2.head);
         linkedlist1.display();
     }
 }
