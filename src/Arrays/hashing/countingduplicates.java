@@ -11,7 +11,7 @@ public class countingduplicates {
     public static void countduplicates(int[] a) {
 
         int n = a.length;
-        HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         for (int i = 0; i < n; i++) {
             int key = a[i];
@@ -22,10 +22,10 @@ public class countingduplicates {
 //            } else {
 //                hmap.put(key, 1);//0,1;
 //            }
-            hmap.put(key, hmap.getOrDefault(key,0)+1);
+            hmap.put(key, map.getOrDefault(key,0)+1);
         }
 
-        for (HashMap.Entry<Integer, Integer> entry : hmap.entrySet()) {
+        for (HashMap.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
                 System.out.println(entry.getKey() + " " + entry.getValue());
             }
