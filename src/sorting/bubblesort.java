@@ -12,7 +12,7 @@ public class bubblesort {
 
     }
 
-    public static void bubblesort(int[] arr,int n) {
+    public static void bubblesort (int[] arr,int n) {
 
         if(n==0 || n==1){
             return;

@@ -1,7 +1,6 @@
 package Arrays;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class findkeyin2darray {
@@ -9,7 +8,7 @@ public class findkeyin2darray {
         int[][] arr={{8,21,33},{17,16,37},{22,18,3}};
         findkey(arr,4);
     }
-
+    
     public static void findkey(int[][] arr , int key) {
 
         ArrayList<Integer>list=new ArrayList<>();

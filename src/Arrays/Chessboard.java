@@ -1,12 +1,7 @@
 package Arrays;
 
-
-
-class chessboard {
+public class Chessboard {
     public static void main(String[] args) {
-
-        // int n= 3;
-        //int [][] arr = new int[n][n];
 
 
         int[][] arr = {
@@ -14,10 +9,10 @@ class chessboard {
                 {1, 1, 1},
                 {1, 1, 1}
         };
-        chessBoard(arr);
+        printChessboard(arr);
     }
 
-    public static void chessBoard(int[][] arr1) {
+    public static void printChessboard (int[][] arr1) {
 
         int n = arr1.length;
         arr1 = new int[n][n];

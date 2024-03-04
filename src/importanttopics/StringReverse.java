@@ -1,5 +1,4 @@
 package importanttopics;
-import java.util.*;
 public class StringReverse {
     public static void main(String[] args){
         String str = "i love india";

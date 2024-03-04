@@ -12,7 +12,7 @@ public class mergesort {
         }
 
     }
-    public static int[] mergesort(int[] arr){
+    public static int[] mergesort(int[] arr) {
 
         if(arr.length==1){
             return arr;
@@ -24,7 +24,7 @@ public class mergesort {
     }
     public static int[] mergearr( int[] left,int[] right){
 
-        int[] joined = new int[left.length+ right.length];
+        int[] joined = new int[left.length + right.length];
         int i=0,j=0,k=0;
         while(i< left.length && j<right.length){
             if(left[i]<right[j]){

@@ -22,7 +22,7 @@ public class countingduplicates {
 //            } else {
 //                hmap.put(key, 1);//0,1;
 //            }
-            hmap.put(key, map.getOrDefault(key,0)+1);
+            map.put(key, map.getOrDefault(key,0)+1);
         }
 
         for (HashMap.Entry<Integer, Integer> entry : map.entrySet()) {
