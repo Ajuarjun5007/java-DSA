@@ -13,7 +13,7 @@ public class quicksort {
             }
 
         }
-        public static void quicksort(int []arr,int l,int h) {
+        public static void quicksort (int []arr,int l,int h) {
             if(l<h){
                 int p=partition(arr,l,h);
                 quicksort(arr,l,p-1);

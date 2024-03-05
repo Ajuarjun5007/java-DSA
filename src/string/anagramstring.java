@@ -19,7 +19,7 @@ class Main{
         char arr1[] = new char[str1.length()];
         char arr2[] = new char[str2.length()];
 
-        char[] array1= str1.toCharArray();
+        // char[] array1= str1.toCharArray();
 //        for(int i=0; i<arr1.length; i++){
 //            arr1[i]=str1.charAt(i);
 //        }
