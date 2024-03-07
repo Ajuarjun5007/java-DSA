@@ -2,9 +2,6 @@ package linkedlist;
 
 public class client {
 
-
-
-
         private class Node {     //   10-->11 12 13 14 15
             int data;
             Node next;
@@ -35,7 +32,7 @@ public class client {
 //           llist1.display();
             System.out.println();
 
-            llist1.head= new linkedlist().Merge(llist1.head, llist2.head);
+            llist1.head= new linkedlist().Merge(llist1.head,llist2.head);
             llist1.display();
 
 //            llist1.head= new linkedlist().mid(llist1.head);

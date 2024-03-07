@@ -7,9 +7,8 @@ public class linkedlist {
 
     Node head;
     Node tail;
-    int size;
 
-    private class Node {     //   10-->11 12 13 14 15
+    private class Node {     
         int val;
         Node next;
 
@@ -26,7 +25,6 @@ public class linkedlist {
 
     //              ------------------XXXXXX---------
     public int size() {
-
         return this.size;
     }
 
