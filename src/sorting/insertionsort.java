@@ -10,7 +10,7 @@ public class insertionsort {
         }
     }
 
-    public static void insertionsort(int[] arr,int n) {
+    public static void insertionsort (int[] arr,int n) {
         if(n==0 || n==1){
            return;
         }

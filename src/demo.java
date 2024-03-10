@@ -1,82 +1,40 @@
-class nlinkedList{
-    Node head;
-    Node tail;
-
-    class Node{
-        int val;
-        Node next;
-        Node(int d){
-            val=d;
-            next=null;
-
-        }
-    }
-    nlinkedList(){
-
-    }
-    public void addFirst(int val){
-        Node newNode = new Node(val);
-        Node temp = this.head;
-        if(temp==null){
-            newNode.next=null;
-            head=newNode;
-        }else{
-            newNode.next=temp;
-            head=newNode;
-        }
-    }
-    public void addLast(int val){
-        Node newNode = new Node(val);
-        Node temp=this.head;
-        if(temp==null){
-            newNode.next=null;
-            head=newNode;
-        }else{
-            while(temp.next!=null){
-                temp=temp.next;
-            }
-            temp.next=newNode;
-            newNode.next=null;
-        }
-    }
-public void findMiddleOfLinkedList(){
-    Node temp=this.head;
-    int size=0;
-    while(temp!=null){
-        temp=temp.next;
-        size++;
-    }
-    int mid=size/2;
-     temp=head;
-    while(mid-->0){
-        temp=temp.next;
-    }
-    System.out.print(temp.val);
-}
-    public void print(){
-        Node temp = head;
-        while(temp!=null){
-            System.out.print(temp.val+"->");
-            temp=temp.next;
-        }
-    }
-
+import java.util.*;
+class MergeSort{
     public static void main(String[] args) {
-        nlinkedList list1 = new nlinkedList();
-        // list1.addFirst(3);
-        // list1.addFirst(2);
-        // list1.addFirst(1);
-        // list1.print();
-        list1.addLast(1);
-        list1.addLast(2);
-        list1.addLast(3);
-        list1.addLast(4);
-        list1.addLast(5);
-        // list1.addLast(6);
-        // list1.addLast(7);
-        // list1.addLast(8);
-        list1.findMiddleOfLinkedList();
-        // list1.print();
+        int[] arr  = {223,11,9,8,34};
 
+        int[] ans  = mergeSort(arr);
+        for (int i = 0; i < ans.length; i++) {
+            System.out.print(ans[i]+" ");
+        }
+    }
+    public static int[] mergeSort(int[] arr) {
+
+        if(arr.length==1){
+            return arr;
+        }
+        int mid=arr.length/2;
+        int[] left=mergeSort(Arrays.copyOfRange(arr,0,mid));
+        int[] right=mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
+        return mergeArr(left,right);
+    }
+    public static int[] mergeArr( int[] left,int[] right){
+
+        int[] joined = new int[left.length + right.length];
+        int i=0,j=0,k=0;
+        while(i< left.length && j<right.length){
+            if(left[i]<right[j]){
+                joined[k++]=left[i++];
+            }else{
+                joined[k++]=right[j++];
+            }
+        }
+        while(i< left.length){
+            joined[k++]=left[i++];
+        }
+        while(j< right.length){
+            joined[k++]=right[j++];
+        }
+        return  joined;
     }
 }
