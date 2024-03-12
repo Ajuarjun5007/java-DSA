@@ -1,40 +1,89 @@
-import java.util.*;
-class MergeSort{
-    public static void main(String[] args) {
-        int[] arr  = {223,11,9,8,34};
+class linkedlist{
+    Node head;
+    Node tail;
 
-        int[] ans  = mergeSort(arr);
-        for (int i = 0; i < ans.length; i++) {
-            System.out.print(ans[i]+" ");
+    class Node{
+        int val;
+        Node next;
+        Node(int d){
+            val=d;
+            next=null;
+        }
+        Node(){
+
         }
     }
-    public static int[] mergeSort(int[] arr) {
-
-        if(arr.length==1){
-            return arr;
+    public void display(){
+        Node temp=head;
+        while (temp!=null) {
+            System.out.print(temp.val+" ->");
+            temp=temp.next;
         }
-        int mid=arr.length/2;
-        int[] left=mergeSort(Arrays.copyOfRange(arr,0,mid));
-        int[] right=mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
-        return mergeArr(left,right);
     }
-    public static int[] mergeArr( int[] left,int[] right){
-
-        int[] joined = new int[left.length + right.length];
-        int i=0,j=0,k=0;
-        while(i< left.length && j<right.length){
-            if(left[i]<right[j]){
-                joined[k++]=left[i++];
-            }else{
-                joined[k++]=right[j++];
+    public void addFirst(int val){
+        Node newNode= new Node(val);
+        Node temp=head;
+        if(temp==null){
+            newNode.next=null;
+            head=newNode;
+        }else{
+            newNode.next=temp;
+            head=newNode;
+        }
+    }
+    public void addLast(int val){
+        Node newNode= new Node(val);
+        Node temp=head;
+        if(temp==null){
+            newNode.next=null;
+            head=newNode;
+        }else{
+            while(temp.next!=null){
+                temp=temp.next;
             }
+            temp.next=newNode;
+            newNode.next=null;
         }
-        while(i< left.length){
-            joined[k++]=left[i++];
+    }
+    public void findMiddleOfLinkedList(){
+        Node temp=head;
+            int size=0;
+        while(temp!=null){
+            size++;
+            temp=temp.next;
         }
-        while(j< right.length){
-            joined[k++]=right[j++];
+        int mid = size/2;
+        temp =head;
+        while(mid-->0){
+            temp=temp.next;
         }
-        return  joined;
+       System.out.println(temp.val);
+    }
+    public void deleteMiddleOfLinkedList(){
+        Node temp=head;
+            int size=0;
+        while(temp!=null){
+            size++;
+            temp=temp.next;
+        }
+        int mid = size/2;
+        temp =head;
+        while(mid-->1){
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;
+    //    System.out.println(temp.val);
+    }
+    public static void main(String[] args) {
+        linkedlist list =  new linkedlist();
+        list.addFirst(6);
+        list.addFirst(5);
+        list.addFirst(4);
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
+        // list.findMiddleOfLinkedList();
+        list.deleteMiddleOfLinkedList();
+        list.display();
     }
 }

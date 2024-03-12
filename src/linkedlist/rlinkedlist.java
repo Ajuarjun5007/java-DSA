@@ -74,6 +74,10 @@ public void findMiddleOfLinkedList(){
         list1.addLast(3);
         list1.addLast(4);
         list1.addLast(5);
+        list1.addLast(6);
+        list1.addLast(7);
+        list1.addLast(8);
+       
         // list1.addLast(6);
         // list1.addLast(7);
         // list1.addLast(8);
