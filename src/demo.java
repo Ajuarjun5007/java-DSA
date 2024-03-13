@@ -1,89 +1,78 @@
 class linkedlist{
     Node head;
-    Node tail;
 
-    class Node{
-        int val;
+    private class Node{
+        int value;
         Node next;
-        Node(int d){
-            val=d;
-            next=null;
+    
+        Node (int value) {
+            this.value = value;
+            this.next = null;
         }
-        Node(){
+    }
 
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.value+" -> ");
+            temp = temp.next;
+        }
+        System.out.print("null");
+    }
+
+    public void add(int index) {
+        Node newNode = new Node(index);
+        Node temp = head;
+        if (temp == null) {
+            newNode.next = null;
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
         }
     }
-    public void display(){
-        Node temp=head;
-        while (temp!=null) {
-            System.out.print(temp.val+" ->");
-            temp=temp.next;
-        }
-    }
-    public void addFirst(int val){
-        Node newNode= new Node(val);
-        Node temp=head;
-        if(temp==null){
-            newNode.next=null;
-            head=newNode;
-        }else{
-            newNode.next=temp;
-            head=newNode;
-        }
-    }
-    public void addLast(int val){
-        Node newNode= new Node(val);
-        Node temp=head;
-        if(temp==null){
-            newNode.next=null;
-            head=newNode;
-        }else{
-            while(temp.next!=null){
-                temp=temp.next;
+
+    public Node merge(Node list1, Node list2) {
+        Node newNode = new Node(0);
+        Node temp = newNode;
+        
+        while (list1 != null && list2 != null) {
+            if (list1.value <= list2.value) {
+                newNode.next = list1;
+                list1 = list1.next;
+            } else {
+                newNode.next = list2;
+                list2 = list2.next;
             }
-            temp.next=newNode;
-            newNode.next=null;
+            newNode = newNode.next;
         }
+        
+        if (list1 ==  null) {
+            newNode.next = list2;
+        } else if (list2 == null) {
+            newNode.next = list1;
+        }
+        return temp.next;
     }
-    public void findMiddleOfLinkedList(){
-        Node temp=head;
-            int size=0;
-        while(temp!=null){
-            size++;
-            temp=temp.next;
-        }
-        int mid = size/2;
-        temp =head;
-        while(mid-->0){
-            temp=temp.next;
-        }
-       System.out.println(temp.val);
-    }
-    public void deleteMiddleOfLinkedList(){
-        Node temp=head;
-            int size=0;
-        while(temp!=null){
-            size++;
-            temp=temp.next;
-        }
-        int mid = size/2;
-        temp =head;
-        while(mid-->1){
-            temp=temp.next;
-        }
-        temp.next=temp.next.next;
-    //    System.out.println(temp.val);
-    }
+
     public static void main(String[] args) {
-        linkedlist list =  new linkedlist();
-        list.addFirst(6);
-        list.addFirst(5);
-        list.addFirst(4);
-        list.addFirst(3);
-        list.addFirst(2);
-        list.addFirst(1);
-        // list.findMiddleOfLinkedList();
-        list.deleteMiddleOfLinkedList();
-        list.display();
+        linkedlist list1 = new linkedlist();
+        linkedlist list2 = new linkedlist();
+        list1.add(15);
+        list1.add(10);
+        list1.add(12);
+        list1.add(5);
+        list1.add(1);
+        list1.display();
+        System.out.println();
+        list2.add(11);
+        list2.add(9);
+        list2.add(4);
+        list2.add(2);
+        list2.add(1);
+        list2.display(); 
+        System.out.println();
+        list1.head = new linkedlist().merge(list1.head, list2.head);
+        list1.display();  
     }
 }

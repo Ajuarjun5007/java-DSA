@@ -63,8 +63,32 @@ public void findMiddleOfLinkedList(){
         }
     }
 
+    public  Node Merge (Node list1,Node list2){
+        Node  newNode = new Node(0);
+        Node temp = newNode;
+        while(list1!=null && list2!=null){
+            if(list1.val<=list2.val){
+                newNode.next =list1;
+                list1=list1.next;
+            }else{
+                newNode.next =list2;
+                list2=list2.next;
+            }
+            newNode=newNode.next;
+        }
+        if(list1==null){
+            newNode.next=list2;
+        }else if(list2==null){
+            newNode.next=list1;
+        }
+        return temp.next;
+    }
+
+   
     public static void main(String[] args) {
         nlinkedList list1 = new nlinkedList();
+        nlinkedList list2 = new nlinkedList();
+        // nlinkedList list3 = new nlinkedList();
         // list1.addFirst(3);
         // list1.addFirst(2);
         // list1.addFirst(1);
@@ -72,17 +96,21 @@ public void findMiddleOfLinkedList(){
         list1.addLast(1);
         list1.addLast(2);
         list1.addLast(3);
-        list1.addLast(4);
-        list1.addLast(5);
         list1.addLast(6);
-        list1.addLast(7);
-        list1.addLast(8);
+        // list1.print();
+        System.out.println();
+        list2.addLast(4);
+        list2.addLast(5);
+        list2.addLast(7);
+        list2.addLast(8);
+        // list2.print();
        
         // list1.addLast(6);
         // list1.addLast(7);
         // list1.addLast(8);
-        list1.findMiddleOfLinkedList();
-        // list1.print();
 
+        // list1.findMiddleOfLinkedList();
+        list1.head =  new nlinkedList().Merge(list1.head,list2.head);     
+        list1.print();
     }
 }
