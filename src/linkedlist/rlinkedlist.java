@@ -84,6 +84,59 @@ public void findMiddleOfLinkedList(){
         return temp.next;
     }
 
+    public void reverse(){
+        Node prev = null;
+        Node curnt = head;
+        Node nextStore;
+        while(curnt!=null){
+            nextStore=curnt.next;
+            curnt.next=prev;
+            prev=curnt;
+            curnt=nextStore;
+        }
+        head=prev;
+    }
+    public Node removeNthNodeFromFirst(Node head,int n){
+        Node first = head;
+        Node newNode = new Node(0);
+        newNode.next=head;
+        int size=n-1;
+        while((size)-->1){
+            first=first.next;
+        }
+      
+        first.next=first.next.next;
+        return head;
+    }
+    // public Node removeNthNodeFromFirst(Node head, int n) {
+    //     if (n == 0) { // if n is 0, remove the head
+    //         return head.next;
+    //     }
+    
+    //     Node first = head;
+    //     for (int i = 1; i <n-1; i++) { // iterate n - 1 times
+    //         first = first.next;
+    //     }
+    
+    //     first.next = first.next.next; // skip the nth node
+    //     return head;
+    // }
+    
+    public Node removeNthNodeFromLast(Node head,int n){
+        Node first = head;
+        Node second = head;
+        Node newNode = new Node(0);
+        newNode.next=head;
+        while(n-->0){
+            first=first.next;
+        }
+        while(first!=null && first.next!=null){
+            first=first.next;
+            second=second.next;
+        }
+        second.next=second.next.next;
+        return newNode.next;
+    }
    
     public static void main(String[] args) {
         nlinkedList list1 = new nlinkedList();
@@ -111,6 +164,9 @@ public void findMiddleOfLinkedList(){
 
         // list1.findMiddleOfLinkedList();
         list1.head =  new nlinkedList().Merge(list1.head,list2.head);     
+        // list1.reverse();
+        // list1.head = new nlinkedList().removeNthNodeFromLast(list1.head, 3);
+        list1.head = new nlinkedList().removeNthNodeFromFirst(list1.head, 3);
         list1.print();
     }
 }
