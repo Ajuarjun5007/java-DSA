@@ -14,17 +14,12 @@ public class movezeros283 {
     public static int[] movezeros(int[] nums) {
         int boundary=0;
         for(int i = 0; i<nums.length;i++) {
-            // nums = [0,1,0,3,12]
-            if(nums[i] != 0) { // i=1
-                //
+            
+            if(nums[i] != 0) { 
                 int temp = nums[boundary];
-                // temp = 0
                 nums[boundary]=nums[i];
-                // nums[0]=1
                 nums[i]=temp;
-                
                 boundary++;
-
             }
         }
         return nums;

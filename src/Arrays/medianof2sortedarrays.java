@@ -39,13 +39,13 @@ public class medianof2sortedarrays {
             k++;
         }
 
-        if ((n + m) % 2 != 0)//
+        if ((n + m) % 2 != 0)
         {
             return arr[(m + n) / 2];
         } else {
-            int x = (m + n) / 2;//4
-            double p = arr[x];//c[2]
-            double q = arr[x - 1];//c[1]
+            int x = (m + n) / 2;
+            double p = arr[x];
+            double q = arr[x - 1];
             return (p + q) / 2;
         }
     }
